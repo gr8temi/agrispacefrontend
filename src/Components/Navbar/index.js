@@ -32,8 +32,8 @@ function Navbar() {
         <img src={logo} className="pl-2 img-fluid logo" alt="" />
         <div className="login">
           <div className="d-flex align-items-center side-top">
-            <div className="big-navbar">
-              <Navigation links={links} />
+            <div className="big-navbar" key="navbar">
+              <Navigation key={links} links={links} />
             </div>
             <FaSearch onClick={toggleSearch} style={{ cursor: "pointer" }} />
             <button className="login-button">LOGIN</button>

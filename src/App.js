@@ -3,20 +3,29 @@ import  'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
 import Routing from './Routes'
 import Request from './request'
+import './App.css'
 function App() {
   
-  const [message, setMessage]=useState([])
+  const [information, setInformation]=useState([])
    
   useEffect(()=>{
   Request.get().then(data =>{
-     setMessage( data.data.message)
+     setInformation( data.data.record)
   })  
   },[])
+ 
 
+  
   return (
     <>
     <Routing />
-    {message}
+    {
+       information.map(element=>(
+         <>
+<h1>{element.tagline}</h1>
+         </>
+       ))
+    }
     </>
   );
 }
