@@ -1,15 +1,17 @@
-import React from 'react';
+import  React, {Suspense,lazy} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
-import Home from '../pages/home'
+const Navbar = lazy(()=>import('../Components/Navbar'))
+const Footer = lazy(()=>import('../Components/Footer'))
+const Home = lazy(()=>import('../pages/home'))
 function Routing() {
     
      return (
        <Router>
         <Navbar/> 
         <Switch>
-           <Route path='/' exact component = {Home}/>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Route path='/' exact component = {Home}/>
+          </Suspense>
         </Switch>
         <Footer/>
        </Router>

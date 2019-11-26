@@ -1,8 +1,11 @@
-import React from 'react';
-import Hero from '../../Components/Hero'
+import React, {Suspense,lazy} from 'react';
+const Hero = lazy(()=>import('../../Components/Hero'))
 function Home() {
   return (
-    <Hero/>
+    <Suspense fallback={<div>Loading...</div>}>
+       <Hero/>
+    </Suspense>
+   
   );
 }
 

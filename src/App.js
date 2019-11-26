@@ -1,9 +1,11 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect,Suspense,lazy} from 'react';
 import  'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
-import Routing from './Routes'
 import Request from './request'
 import './App.css'
+const Routing = lazy(()=>import('./Routes'))
+
+
 function App() {
   
   const [information, setInformation]=useState([])
@@ -18,7 +20,10 @@ function App() {
   
   return (
     <>
-    <Routing />
+    <Suspense fallback={<div>loading...</div>}>
+      <Routing />
+    </Suspense>
+    
     {
        information.map((element,key)=>(
 
