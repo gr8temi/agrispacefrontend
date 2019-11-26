@@ -5,7 +5,7 @@ import { FaSearch} from "react-icons/fa";
 import {IoIosArrowRoundForward} from 'react-icons/io'
 
 import {BrowserRouter as Router, Link } from "react-router-dom";
-import Search from './static/js/styled'
+import Search from './styles'
 function Navbar() {
   const links = ["Home", "Hire", "Contact"];
   const [search, setSearch] = useState({
