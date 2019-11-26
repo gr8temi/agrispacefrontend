@@ -5,9 +5,8 @@ function Hero(props) {
 
 
     return (
-        <>
         <div className="position-relative" data-testid="heroTest">
-            <img className="banner" src={banner} />
+            <img className="banner" src={banner} alt="banner" />
             <div className="position-absolute tagline-class" style={{width:"100%", height:"100%"}}>
                 <div className="d-flex flex-column tagline pt-3">
                         <h1 className="text-center">We connect you <br/> To those who need your services <br/> and give you the best hand to do your business</h1>
@@ -19,7 +18,6 @@ function Hero(props) {
                 </div>
             </div>
         </div> 
-        </>
     );
 }
 

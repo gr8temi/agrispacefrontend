@@ -20,10 +20,9 @@ function App() {
     <>
     <Routing />
     {
-       information.map(element=>(
-         <>
-<h1>{element.tagline}</h1>
-         </>
+       information.map((element,key)=>(
+
+      <h1 key={key}>{element.tagline}</h1>
        ))
     }
     </>

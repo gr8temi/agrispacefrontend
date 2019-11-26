@@ -1,13 +1,11 @@
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import Request from '../request'
 import Home from '../pages/home'
 function Routing() {
     
      return (
-       <>
        <Router>
         <Navbar/> 
         <Switch>
@@ -15,7 +13,6 @@ function Routing() {
         </Switch>
         <Footer/>
        </Router>
-       </>
      );
    }
 

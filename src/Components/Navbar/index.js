@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./static/css/navbar.css";
 import logo from "./static/images/agric.png";
 import { FaSearch} from "react-icons/fa";
 import {IoIosArrowRoundForward} from 'react-icons/io'
-import styled from "styled-components";
-import {BrowserRouter as Router,Switch,Route, Link } from "react-router-dom";
 
-let Search = styled.div`
-  background-color: #f8f4f1;
-  border-bottom: 1px solid #d1cecc;
-  padding: 0.5rem;
-  display: ${props => props.display.display} !important;
-  opacity: ${props => props.display.opacity} !important;
-  transition: ease-in-out 3s;
-`;
-
+import {BrowserRouter as Router, Link } from "react-router-dom";
+import Search from './static/js/styled'
 function Navbar() {
   const links = ["Home", "Hire", "Contact"];
   const [search, setSearch] = useState({
@@ -55,15 +46,12 @@ function Navbar() {
   );
 }
 function Navigation({ links }) {
-  let navlinks = links.map(element => (
-    <>
-    <Router>
-        <Link to={`/${element}`} className="pl-md-2 pr-md-3 nav-li">
+  let navlinks = links.map((element,key) => (
+    <Router key={key}>
+        <Link  to={`/${element}`} className="pl-md-2 pr-md-3 nav-li">
         {element}
       </Link>
     </Router>
-      
-    </>
   ));
   return <>{navlinks}</>;
 }
