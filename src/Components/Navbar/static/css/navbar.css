@@ -1,0 +1,45 @@
+.navbar-me{
+    background-color: #fff;
+    height: 4.2rem !important;
+}
+.logo {
+    /* width: 40%; */
+    height: auto;
+}
+.login{
+    height: 100%;
+}
+.side-top{
+    height: 100%;
+}
+.login-button{
+    height: 100%;
+    border: none;
+    padding: 0 1.5rem;
+    background-color:#428da5 ;
+    color: #fff;
+    margin-left: 1rem ;
+}
+.mobile-navbar{
+    background-color: #f8f4f1;
+    padding: 0.4rem;
+}
+.search-input{
+    border:none;
+    background: transparent;
+    width: 80%;
+    
+}
+@media only screen and (min-width:767px){
+    .mobile-navbar {
+        display:none !important;
+    }
+}
+@media only screen and (max-width:766px ){
+    .big-navbar {
+        display:none !important;
+    }
+}
+.nav-li{
+    color: #553865;
+}

@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState,useEffect,Suspense,lazy} from 'react';
+import  'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap'
+import Request from './request'
+import './App.css'
+const Routing = lazy(()=>import('./Routes'))
+
 
 function App() {
+  
+  const [information, setInformation]=useState([])
+   
+  useEffect(()=>{
+  Request.get().then(data =>{
+     setInformation( data.data.record)
+  })  
+  },[])
+ 
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Suspense fallback={<div>loading...</div>}>
+      <Routing />
+    </Suspense>
+    
+    {
+       information.map((element,key)=>(
+
+      <h1 key={key}>{element.tagline}</h1>
+       ))
+    }
+    </>
   );
 }
 
