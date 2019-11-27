@@ -7,13 +7,13 @@ function Routing() {
     
      return (
        <Router>
+         <Suspense fallback={<div>Loading...</div>}>
         <Navbar/> 
         <Switch>
-          <Suspense fallback={<div>Loading...</div>}>
             <Route path='/' exact component = {Home}/>
-          </Suspense>
         </Switch>
         <Footer/>
+        </Suspense>
        </Router>
      );
    }
