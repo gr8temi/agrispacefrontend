@@ -1,22 +1,35 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect,Suspense,lazy} from 'react';
 import  'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
-import Routing from './Routes'
 import Request from './request'
+import './App.css'
+const Routing = lazy(()=>import('./Routes'))
+
+
 function App() {
   
-  const [message, setMessage]=useState([])
+  const [information, setInformation]=useState([])
    
   useEffect(()=>{
   Request.get().then(data =>{
-     setMessage( data.data.message)
+     setInformation( data.data.record)
   })  
   },[])
+ 
 
+  
   return (
     <>
-    <Routing />
-    {message}
+    <Suspense fallback={<div>loading...</div>}>
+      <Routing />
+    </Suspense>
+    
+    {
+       information.map((element,key)=>(
+
+      <h1 key={key}>{element.tagline}</h1>
+       ))
+    }
     </>
   );
 }
