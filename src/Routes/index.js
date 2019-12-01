@@ -7,7 +7,7 @@ function Routing() {
     
      return (
        <Router>
-         <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
         <Navbar/> 
         <Switch>
             <Route path='/' exact component = {Home}/>

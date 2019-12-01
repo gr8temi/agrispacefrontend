@@ -1,0 +1,20 @@
+.my-card h2{
+    color: #428da5;
+}
+.my-card .card{
+    height: 32rem;
+}
+.start-tagline{
+    font-size: 1.2rem;
+}
+.card-top{
+    height: 40%;
+    border-bottom: 1px solid #428da5 ;
+    background-color:#428da5;
+}
+.card-button{
+    bottom: 2rem;
+}
+.card-button button{
+    width: 8rem;
+}

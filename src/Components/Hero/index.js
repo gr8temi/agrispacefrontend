@@ -1,9 +1,7 @@
 import React from 'react';
-import banner from './static/images/agric.png'
+import banner from './static/images/Agric.jpg'
 import './static/css/Hero.css'
-function Hero(props) {
-
-
+function Hero() {
     return (
         <div className="position-relative" data-testid="heroTest">
             <img className="banner" src={banner} alt="banner" />

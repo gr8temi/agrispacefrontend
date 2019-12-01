@@ -1,3 +1,11 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(Neuton-Light.ttf);
+}
+
+* {
+  font-family: myFirstFont;
+}
 .btn-agric{
   background-color:#428da5 ;
   color: #fff;
